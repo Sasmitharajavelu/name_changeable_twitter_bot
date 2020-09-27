@@ -11,18 +11,12 @@ def create_api():
    api.verify_credentials()
    print('API Created')
    return api
-   def followers_count(user):
-      emoji_numbers = {0:"0️⃣",1:"1️⃣",2:"2️⃣",3:"3️⃣",4:"4️⃣",5:"5️⃣",6:"6️⃣",7:"7️⃣",8:"8️⃣",9:"9️⃣"}
-      followers_split = [int(i) for i in str(user)]
-      followers_in_emoji = [emoji_numbers[j] for j in followers_split if j in emoji_numbers.keys()]             
-      print(followers_in_emoji)
 import time
 def followers_count(user):
       emoji_numbers = {0:"0️⃣",1:"1️⃣",2:"2️⃣",3:"3️⃣",4:"4️⃣",5:"5️⃣",6:"6️⃣",7:"7️⃣",8:"8️⃣",9:"9️⃣"}
       followers_split = [int(i) for i in str(user.followers_count)]
       followers_in_emoji =''.join([emoji_numbers[j] for j in followers_split if j in emoji_numbers.keys()])             
       return followers_in_emoji
-
 api = create_api()
 while True:
     user = api.get_user('SasmithaRajave1')
